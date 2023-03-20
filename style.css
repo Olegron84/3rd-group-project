@@ -45,7 +45,12 @@ html,
 body{
   min-height: 100%;
 }
-
+.line{
+    background-color: #000000;
+    width: 33.5rem;
+    height: 1px;
+    margin: 0 auto;
+}
 .header-modal{
     display: none;
     position: fixed;
@@ -55,6 +60,7 @@ body{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
 .header-modal.hdm_active{
     display: block;
     z-index: 99999;
@@ -266,13 +272,174 @@ input:checked + .slider::before{
     content: url(./img/dark.svg);
     transform: translateX(20px);
 }
-
 .slider.round {
     border-radius: 34px;
 }
   
 .slider.round:before {
     border-radius: 50%;
+}
+.main{
+    background-image: url("img/main-bkg.png");
+    background-repeat: repeat-y;
+    background-position: left top;
+    background-size: cover;
+}
+.main__container{
+    width: 75.7%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+.main__title{
+    width: 33.5rem;
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
+.main__title-text{
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 2.25rem;
+}
+.main__c-number{
+    text-align: center;
+    width: 36rem;
+    margin-bottom: 2.25rem;
+}
+.frstsk{
+    margin-bottom:  2.25rem;
+    text-align: center;
+}
+.frstsk-title{
+    font-size: 1rem;
+    margin-bottom:  2.25rem;
+}
+.frstsk-year {
+    width: 215px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    background: #D7D7D7;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 12px; 
+    align-items: center;   
+}
+
+.frstsk-alarm {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.frstsk-glass {
+    width: 35px;
+    height: 35px;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
+    background:#000000;
+}
+.frstsk-form{
+    display: flex;
+    margin-bottom:  2.25rem;
+}
+.c-number__content{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.25rem;
+}
+.c-number__title{
+    margin-bottom: 2.25rem;
+    font-size: 1rem;
+}
+
+.c-number__form{
+    display: flex;
+}
+.c-number__input{
+    padding: 10px;
+    background: #D7D7D7;
+    border-radius: 20px 0 0 20px;
+    font-size: 0.75rem;
+    outline: none;
+    border: none;
+}
+.c-number__image{
+    flex: 0 1 2.18rem;
+    height: 2.18rem;
+}
+.main__srp{
+    width: 40.6rem;
+    margin-bottom: 2.25rem;
+}
+.srp__title{
+    font-size: 1rem;
+    margin-bottom: 2.25rem;
+    text-align: center;
+}
+.srp__game{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5.81rem auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 6.5rem;
+    row-gap: 2.25rem;
+    margin-bottom: 2.25rem;
+}
+.srp__images{
+    display: flex;
+    grid-column: 2 / 3;
+}
+.srp__image{
+    flex: 0 1 3.75rem;
+}
+.srp__image:not(:last-child){
+    margin-right: 2.375rem;
+}
+.srp__cvariation{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    font-size: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: #000000;
+    border-radius: 20px;
+    color: #fff;
+}
+.srp__result{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: center;
+}
+.calc-time{
+    width: 33.5rem;
+    text-align: center;
+}
+.calc-time__title{
+    margin-bottom: 2.25rem;
+}
+.calc-time__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.25rem;
+}
+.calc-time__form{
+    display: flex;
+    height: 2.18rem;
+}
+.calc-time__input{
+    padding: 10px;
+    background: #D7D7D7;
+    border-radius: 20px 0 0 20px;
+    font-size: 0.75rem;
+    outline: none;
+    border: none;
+    width: 7.18rem;
 }
 .wrap__footer{
     padding: 3.75rem 0;
@@ -321,9 +488,6 @@ input:checked + .slider::before{
     display: flex;
     column-gap: 2.25rem;
     margin-bottom: 1.125rem;
-}
-.calc-time__image{
-    width: 50px;
 }
 .footer__modal{
     display: none;

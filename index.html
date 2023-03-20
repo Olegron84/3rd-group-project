@@ -85,12 +85,35 @@
         </div>
         <div class="wrap__main main">
             <div class="main__container container">
-                <div class="main__c-number c-number">
-                    <div class="c-number__form">
-                        <input type="text" class="c-number__input" placeholder="Вгадай число">
-                        <div class="c-number__image"><img src="img/Frame 105.png" alt="#" class="c-number__img"></div>
+                <div class="main__title">
+                    <h2 class="main__title-text">Популярні інетрактивні ігри</h2>
+                    <hr class="line">
+                </div>
+                <div class="frstsk">
+                    <h2 class="frstsk-title">
+                        Перевір в який рік ти народився
+                    </h2>
+                    <div class="frstsk-form">
+                        <input type="text" id="check" class="frstsk-year" placeholder="Введіть рік народження" >
+                        <button  id="but" class="frstsk-glass">
+                            <img src="./img/Frame 105.png" alt="#">
+                        </button>
+                        <p id="result" class="frstsk-alarm"></p>
                     </div>
-                    <p class="c-number__result"></p>
+                    <div class="line"></div>
+                </div>
+                <div class="main__c-number c-number">
+                    <h2 class="c-number__title">
+                        Вгадай число, яке загадав комп’ютер
+                    </h2>
+                    <div class="c-number__content">
+                        <div class="c-number__form">
+                            <input type="text" class="c-number__input" placeholder="Вгадай число">
+                            <div class="c-number__image"><img src="img/Frame 105.png" alt="#" class="c-number__img"></div>
+                        </div>
+                        <p class="c-number__result"></p>
+                    </div>
+                    <div class="line"></div>
                 </div>
                 <div class="main__srp srp">
                     <h2 class="srp__title">
@@ -114,21 +137,30 @@
                             <p class="srp__c-res">Комп’ютер - 0</p>
                             <p class="srp__p-res">Ви - 0</p>
                         </div>
+                        <p class="srp__result">
+                    
+                        </p>
+                        <button class="srp__cvariation">
+                            Варіант компьютера
+                        </button>
                     </div>
-                    <p class="srp__result">
-                    
-                    </p>
-                    <button class="srp__cvariation">
-                        Варіант компьютера
-                    </button>
+                    <div class="line"></div>
                 </div>
+                <div class="calc-time main__calc-time">
+                    <h2 class="calc-time__title">
+                        Калькулятор часу
+                    </h2>
+                    <div class="calc-time__content">
+                        <div class="calc-time__form">
+                            <input type="text" class="calc-time__input" placeholder="Введіть число">
+                        <div class="calc-time__image"><img src="img/Frame 105.png" alt="#" class="c-number__img"></div>
+                        </div>
+                        <p class="calc-time__result">
+                        
+                        </p>
+                    </div>
+                    <div class="line"></div>
             </div>
-            <div class="calc-time main__calc-time">
-                    <input type="text" class="calc-time__input" placeholder="Введіть число">
-                    <div class="calc-time__image"><img src="img/Frame 105.png" alt="#" class="c-number__img"></div>
-                    <p class="calc-time__result">
-                    
-                    </p>
             </div>
         </div>
         <div class="footer wrap__footer">

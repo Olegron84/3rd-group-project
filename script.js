@@ -16,6 +16,21 @@ document.addEventListener("DOMContentLoaded", ()=> {
         header_modal.classList.remove("hdm_active");
         document.getElementById("body").style = "overflow:auto";
     }) 
+//////
+let frstk_input = document.getElementById("check");
+let frstk_text = document.getElementById("result");
+
+let frstk_btn = document.getElementById("but");
+
+frstk_btn.addEventListener("click", function(){
+    if(frstk_input.value % 4 == 0){
+        frstk_text.innerHTML = ("ви народились в високосний рік!!!");
+        frstk_text.style.color = "green";
+    }else{
+        frstk_text.innerHTML = ("нажаль ви не народились в високосний рік(((");
+        frstk_text.style.color = "red";
+    }
+});
 ////////
     let c_form = document.querySelector(".c-number__input");
     let c_res = document.querySelector(".c-number__result");
@@ -25,9 +40,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
         let number = Math.floor(Math.random() * 10);
         let user_number = c_form.value;
         if (user_number == number){
-            c_res.innerHTML = "<span>Ok</span>"
+            c_res.innerText = "Ви виграли!"
+            c_res.style = "color:green;"
         }else{
-            c_res.innerHTML = "<span>Not Ok</span>"
+            c_res.innerText = "Ви програли!"
+            c_res.style = "color:red;"
         };
     })
 ///////////
