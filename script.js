@@ -17,6 +17,37 @@ document.addEventListener("DOMContentLoaded", ()=> {
         document.getElementById("body").style = "overflow:auto";
     }) 
 //////
+let header_select_btn = document.querySelector(".header__select-name-btn-image")
+let header_select_options = document.querySelector(".header__select-options")
+header_select_btn.addEventListener("click", ()=>{
+    if (header_select_btn.classList.contains("select-btn-active")){
+        header_select_btn.classList.remove("select-btn-active")
+        header_select_options.classList.remove("select-options-active")
+    }else{
+        header_select_btn.classList.add("select-btn-active")
+        header_select_options.classList.add("select-options-active")
+    }
+    
+ 
+})/////
+let head_link = document.querySelector(".link-theme")
+let header_theme = document.querySelector(".slider");
+header_theme.addEventListener("click", ()=>{
+    // let light_theme = "style.css";
+    // let dark_theme = "style-black.css";
+    let currTheme = head_link.getAttribute("href");
+    if(currTheme == "style.css")
+    {
+   	 currTheme = "style-black.css";
+    }
+    else
+    {    
+   	 currTheme = "style.css";
+    }
+
+    head_link.setAttribute("href", currTheme);
+})
+//////
 let frstk_input = document.getElementById("check");
 let frstk_text = document.getElementById("result");
 
