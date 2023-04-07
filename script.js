@@ -33,8 +33,6 @@ header_select_btn.addEventListener("click", ()=>{
 let head_link = document.querySelector(".link-theme")
 let header_theme = document.querySelector(".slider");
 header_theme.addEventListener("click", ()=>{
-    // let light_theme = "style.css";
-    // let dark_theme = "style-black.css";
     let currTheme = head_link.getAttribute("href");
     if(currTheme == "style.css")
     {
@@ -145,6 +143,44 @@ function draw(){
         srp_player = 0;
 };
 })
+/////
+let Numdivide = document.getElementById("divide");
+let Numminus = document.getElementById("minus");
+let Nummultiply = document.getElementById("multiply");
+let Numplus = document.getElementById("plus");
+let Numequal = document.getElementById("equal");
+let num1 = document.getElementById("read1");
+let num2 = document.getElementById("read2");
+let Inputequal = document.getElementById("resultNum");
+var symbol;
+Numdivide.addEventListener("click", function () {
+  symbol = "/";
+});
+Numminus.addEventListener("click", function () {
+  symbol = "-";
+});
+Nummultiply.addEventListener("click", function () {
+  symbol = "*";
+});
+Numplus.addEventListener("click", function () {
+  symbol = "+";
+});
+Numequal.addEventListener("click", function () {
+  switch (symbol) {
+    case "*":
+      Inputequal.value = +num1.value * +num2.value;
+      break;
+    case "/":
+      Inputequal.value = +num1.value / +num2.value;
+      break;
+    case "+":
+      Inputequal.value = +num1.value + +num2.value;
+      break;
+    case "-":
+      Inputequal.value = +num1.value - +num2.value;
+      break;
+  }
+});
 ///////
 let calc_time_input = document.querySelector(".calc-time__input")
 let calc_time_result = document.querySelector(".calc-time__result")
@@ -164,6 +200,101 @@ calc_time_btn.addEventListener("click", ()=>{
     }
     calc_time_result.innerHTML = `<span>${day} дн. ${hours} год. ${mins} хв.</span>`;   
 })
+//////
+let dino_game = document.querySelector(".dino__game");
+let dino = document.querySelector(".dino__image")
+let cactus1 = document.querySelector(".dino__cactus1-image")
+
+dino_game.addEventListener("click", ()=>{
+    dino.classList.add("dino-running")
+    cactus1.classList.add("cactus_active")
+
+        document.addEventListener("keydown", function(event){
+            if(event.shiftKey && cactus1.classList.contains("cactus_active")){
+                dino.classList.remove("dino-running")
+                dino.classList.add("dino-jumping")
+                setTimeout(() => {
+                    dino.classList.remove("dino-jumping")
+                }, 500);
+                dino.classList.add("dino-running")
+            }
+        
+        })
+        setInterval(() => {
+            let dino_top = parseInt(window.getComputedStyle(dino).getPropertyValue("top"))
+            let cactus_left = parseInt(window.getComputedStyle(cactus1).getPropertyValue("left"))
+            if(cactus_left<147 && cactus_left>0 && dino_top>=86){
+                alert("GAME OVER")
+                dino.classList.remove("dino-running")
+                cactus1.classList.remove("cactus_active")
+            }
+        }, 10);
+    
+})
+/////
+let football_canvas = document.querySelector(".f-canvas")
+let footbal_context = football_canvas.getContext("2d")
+
+var mouseXblock = 0
+var mouseYblock = 0
+
+football_canvas.addEventListener("click", function(event){
+  var mouseX = event.pageX
+  var mouseY = event.clientY
+  var block = document.querySelector(".f-canvas")
+  var blockRectangle = block.getBoundingClientRect()
+  var blockX = blockRectangle.left
+  var blockY = blockRectangle.top
+  mouseXblock = mouseX - blockX - 25
+  mouseYblock = mouseY - blockY - 25
+})
+
+let ball = new Image()
+ball.src = "../img/foot_ball.png"
+
+football_canvas.width = 720
+football_canvas.height = 220
+
+function draw(){
+    footbal_context.fillStyle = "green"
+    footbal_context.fillRect(0, 0, 720, 720)
+    footbal_context.drawImage(ball, mouseXblock, mouseYblock)
+  if(mouseXblock > 0){
+    footbal_context.fillStyle = "green"
+    footbal_context.fillRect(0, 0, 720, 720)
+    footbal_context.drawImage(ball, mouseXblock, mouseYblock)
+  }
+}
+setInterval(draw, 30)
+/////
+const btn = document.getElementById("para");
+let x = document.getElementById("numLow");
+let y = document.getElementById("numDraw");
+let a = document.getElementById("numMax");
+btn.addEventListener("click", inputResult);
+function inputResult() {
+     btn.innerHTML = `Найбільше число яке ви ввели - це ${Math.max(+x.value, +y.value, +a.value)}`;
+}
+/////
+
+let offset = 0;
+const sliderLine = document.querySelector('.my-pictures-section');
+
+document.querySelector('#arrow-right').addEventListener('click', function(){
+    offset = offset + 256;
+    if (offset > 768) {
+        offset = 0;
+    }
+    sliderLine.style.left = -offset + 'px';
+});
+
+document.querySelector('#arrow-left').addEventListener('click', function () {
+    offset = offset - 256;
+    if (offset < 0) {
+        offset = 768;
+    }
+    sliderLine.style.left = -offset + 'px';
+});
 //////
 let footer_submit = document.querySelector(".footer__form-button")
 let footer_modal = document.querySelector(".footer__modal")

@@ -251,7 +251,6 @@ body{
     justify-content: space-between;
     margin-bottom: 2.25rem;
  }
- 
  .writeInput input {
     width: 138px;
     height: 35px;
@@ -690,6 +689,9 @@ input:checked + .slider::before{
     grid-row: 2 / 3;
     text-align: center;
 }
+.main__calc-time{
+    margin-bottom: 2.25rem;
+}
 .calc-time{
     width: 33.5rem;
     text-align: center;
@@ -716,6 +718,204 @@ input:checked + .slider::before{
     border: none;
     width: 7.18rem;
 }
+.main__dino{
+    margin: 0 auto 2.25rem;
+}
+.dino{
+    text-align: center;
+}
+.dino__title{
+    margin-bottom: 1rem;
+}
+.dino__descr{
+    margin-bottom: 2.25rem;
+}
+.dino__game{
+    width: 720px;
+    height: 241px;
+    border: 1px solid black;
+    background-image: url(img/dino/ground.png);
+    background-repeat: repeat-x;
+    background-position: 0% 85%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2.25rem;
+}
+.dino__image{
+    background-image: url(img/dino/standing_still.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 70px;
+    width: 75px;
+    position: absolute;
+    top: 120px;
+    left: 72px;
+}
+.dino__cactus1-image{
+    
+    background-image: url(img/dino/cactus_1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 35px;
+    height: 60px;
+    position: absolute;
+    left: calc(100% + 35px);
+    top: 134px;
+}
+.dino__cactus1-image.cactus_active{
+    animation: cactuses_move 2s linear infinite;
+}
+.dino__image.dino-running{
+    animation-name: dino-run;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+
+    animation-iteration-count: infinite;
+}
+.dino__image.dino-jumping{
+    animation: dino-jump 0.5s ease-in 1;
+}
+@keyframes cactuses_move {
+    0%{
+        left: calc(100% + 35px);
+    }
+    50%{
+        left: 50%;
+    }
+    100%{
+        left: -30%;
+    }
+}
+@keyframes dino-run {
+    0% {
+       background-image: url(img/dino/standing_still.png); 
+    }
+    50%{
+        background-image: url(img/dino/dino_run2.png); 
+    }
+    100% {
+        background-image: url(img/dino/dino_run1.png); 
+     }
+}
+@keyframes dino-jump {
+    0%{
+        top: 50%;
+    }
+    25%{
+        top: 30%;
+    }
+    50%{
+        top: 20%;
+    }
+    75%{
+        top: 30%;
+    }
+    100%{
+        top: 50%;
+    }
+}
+.f-canvas {
+    border: 2px solid black;
+    border-radius: 27px;
+ }
+ 
+ .foot__ball {
+    margin-bottom: 36px;
+ }
+ .task7 {
+    display: flex;
+    width: 720px;
+    height: 276px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.25rem;
+ }
+.iy {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+ }
+ 
+ .student {
+    width: 256px;
+    height: 256px;
+    margin: 20px auto;
+    overflow: hidden;
+ }
+ 
+ .my-pictures-section {
+    width: 1024px;
+    height: 256px;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+ }
+ 
+ #arrow-left {
+    content: url(./img/arrow-left.svg);
+    background-color: #fff;
+    position: absolute;
+    left: -328px;
+    top: 100px;
+    width: 50px;
+    height: 100px;
+    color: #000000;
+    cursor: pointer;
+ }
+ 
+ #arrow-right {
+    content: url(./img/arrow-right.svg);
+    position: absolute;
+    background-color: #fff;
+    right: -328px;
+    top: 100px;
+    width: 50px;
+    height: 100px;
+    color: #000000;
+    cursor: pointer;
+ }
+ 
+ 
+ .game-section-title {
+    height: 20px;
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+ }
+ 
+ 
+ .game-section {
+    position: relative;
+    padding: 36px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    row-gap: 36px;
+ }
+ 
+ .img-title {
+    width: 115px;
+    height: 17px;
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+ }
+ 
+ .img-subtitle {
+    width: 315px;
+    height: 15px;
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 400;
+ }
 .wrap__footer{
     padding: 3.75rem 0;
 }
@@ -845,4 +1045,4 @@ input:checked + .slider::before{
     left: 43px;
     top: 69px;
 }
-/* black theme */
+
