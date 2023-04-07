@@ -250,7 +250,7 @@ football_canvas.addEventListener("click", function(event){
 })
 
 let ball = new Image()
-ball.src = "../img/foot_ball.png"
+ball.src = "./img/foot_ball.png"
 
 football_canvas.width = 720
 football_canvas.height = 220
